@@ -24,7 +24,10 @@ namespace cli {
 
         std::cout<<"DirName: "<<dirPath<<std::endl; //Prints directory at where the event occured;
         std::string s = "| ";
+
+        std::cout<<"Event mask"<<event->mask<<" \n";
         if(event->mask & IN_MODIFY) s+="Modifed | ";
+        else if(event->mask & IN_ISDIR) s+="Directory | ";
         else if(event->mask & IN_CREATE) s+="Created |";
         else if(event->mask & IN_DELETE) s+="Deleted |";
         else if(event->mask & IN_CLOSE) s+="Closed |";
