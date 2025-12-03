@@ -1,4 +1,5 @@
 #include <iostream>
+#include <chrono> 
 #include <sys/inotify.h>
 #include "app/engine/foxwatch.hpp"
 #include <unistd.h>
@@ -57,6 +58,15 @@ namespace engine // Main engine logic
             }
         }
     }
+
+    // void FoxWatch::handleDateTime(){
+
+    //     std::chrono::system_clock timeObj;
+        
+    //     auto currTime = timeObj.now();
+
+    //     std::cout<<currTime;
+    // }
 
     void FoxWatch::addWatch(const std::string &path)
     {
